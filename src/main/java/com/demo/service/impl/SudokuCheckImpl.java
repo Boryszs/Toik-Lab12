@@ -36,7 +36,7 @@ public class SudokuCheckImpl implements SudokuCheck {
 
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE - ONE; j++) {
-                for (int n = j + 1; n < SIZE; n++) {
+                for (int n = j + ONE; n < SIZE; n++) {
                     if (sudoku[i][j] != 0 && sudoku[i][j] == sudoku[i][n]) {
                         dataResponse.setLineIds(i + ONE);
                         wrongSetNumber = true;
@@ -50,22 +50,22 @@ public class SudokuCheckImpl implements SudokuCheck {
         }
 
 
-        boolean[] found = new boolean[9];
+        boolean[] found = new boolean[SIZE];
 
         int count = 1;
-        for (int n = 0; n < 9; n += 3) {
-            for (int m = 0; m < 9; m += 3) {
-                for (int i = n; i < n + 3; i++) {
-                    for (int j = m; j < m + 3; j++) {
-                        if (found[sudoku[i][j] - 1]) {
+        for (int n = 0; n < 9; n += SIZE_SMALL) {
+            for (int m = 0; m < 9; m += SIZE_SMALL) {
+                for (int i = n; i < n + SIZE_SMALL; i++) {
+                    for (int j = m; j < m + SIZE_SMALL; j++) {
+                        if (found[sudoku[i][j] - ONE]) {
                             dataResponse.setAreaIds(count);
                             wrongSetNumber = true;
                         }
-                        found[(sudoku[i][j] - 1)] = true;
+                        found[(sudoku[i][j] - ONE)] = true;
                     }
                 }
                 count++;
-                found = new boolean[9];
+                found = new boolean[SIZE];
             }
         }
 

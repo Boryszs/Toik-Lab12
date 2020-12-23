@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.example</groupId>
-    <artifactId>bookstore</artifactId>
+    <artifactId>toik-lab12</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>bookstore</name>
+    <name>lab12</name>
     <description>toik 12</description>
 
     <properties>
