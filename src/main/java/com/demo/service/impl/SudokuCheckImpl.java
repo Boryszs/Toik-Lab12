@@ -37,11 +37,11 @@ public class SudokuCheckImpl implements SudokuCheck {
         for (int i = 0; i < SIZE; i++) {
             for (int j = 0; j < SIZE - ONE; j++) {
                 for (int n = j + ONE; n < SIZE; n++) {
-                    if (sudoku[i][j] != 0 && sudoku[i][j] == sudoku[i][n]) {
+                    if (sudoku[i][j] == sudoku[i][n]) {
                         dataResponse.setLineIds(i + ONE);
                         wrongSetNumber = true;
                     }
-                    if (sudoku[j][i] != 0 && sudoku[j][i] == sudoku[n][i]) {
+                    if (sudoku[j][i] == sudoku[n][i]) {
                         dataResponse.setKolumnIds(i + ONE);
                         wrongSetNumber = true;
                     }
