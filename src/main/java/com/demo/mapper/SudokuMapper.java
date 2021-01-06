@@ -5,5 +5,5 @@ import java.util.Map;
 
 public interface SudokuMapper {
 
-    int[][] convertLinesToBooks(List<String> lines);
+    int[][] convertToSudokuBoard(List<String> lines);
 }

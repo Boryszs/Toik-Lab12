@@ -9,7 +9,7 @@ import java.util.List;
 public class SudokuMapperImpl implements SudokuMapper {
 
     @Override
-    public int[][] convertLinesToBooks(List<String> lines) {
+    public int[][] convertToSudokuBoard(List<String> lines) {
 
         int[][] sudoku = new int[9][9];
         for (int i = 0; i < 9; i++) {

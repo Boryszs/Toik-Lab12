@@ -28,7 +28,7 @@ public class SudokuController {
     }
 
     @GetMapping("/verify")
-    public ResponseEntity<?> getBooks() {
+    public ResponseEntity<?> getBoard() {
         Optional<DataResponse> data = sudokuCheck.checkBoard();
         if (!data.isPresent()) {
             return new ResponseEntity<>(HttpStatus.OK);

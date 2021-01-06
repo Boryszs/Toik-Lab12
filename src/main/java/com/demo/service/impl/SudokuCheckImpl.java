@@ -29,7 +29,7 @@ public class SudokuCheckImpl implements SudokuCheck {
     @Override
     public Optional<DataResponse> checkBoard() {
         List<String> line = csvOperationsComponent.readCsvFile("sudoku.csv", ";");
-        int[][] sudoku = sudokuMapper.convertLinesToBooks(line);
+        int[][] sudoku = sudokuMapper.convertToSudokuBoard(line);
         boolean wrongSetNumber = false;
         DataResponse dataResponse = new DataResponse();
 
